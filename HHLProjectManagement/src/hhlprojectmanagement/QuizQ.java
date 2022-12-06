@@ -23,8 +23,40 @@ public class QuizQ {
         this.ans = ans;
         this.feedback = feedback;
     }
-    
-    
+
+    public String getQue() {
+        return que;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public int getAns() {
+        return ans;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setQue(String que) {
+        this.que = que;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public void setAns(int ans) {
+        this.ans = ans;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
+
+    public String toString() {
+        return "QuizQ{" + "que=" + que + ", value=" + value + ", ans=" + ans + ", feedback=" + feedback + '}';
+    }
 }
-
-

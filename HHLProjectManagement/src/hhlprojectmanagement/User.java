@@ -1,13 +1,40 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * V. He
+ * Dec 6th, 2022
+ * Class for user
  */
 package hhlprojectmanagement;
 
-/**
- *
- * @author vihe8877
- */
 public class User {
-    
+    private String name;
+    private int score;
+
+    public User(String name) {
+        this.name = name;
+    }
+
+    public User(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public String toString() {
+        return "User{" + "name=" + name + ", score=" + score + '}';
+    }
 }
