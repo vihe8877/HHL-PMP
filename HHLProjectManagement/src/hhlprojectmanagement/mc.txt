@@ -1,0 +1,60 @@
+1. What is a system?
+A - combination of software (and sometimes hardware) that provides a solution for a problem
+B - combination of methods
+C - a method that solves many problems
+D - a method that solves one problem
+A
+2. Which one of the following does not measure success in the project?
+A - If it solves the problem
+B - If it is easy to maintain
+C - Is it scalable
+D - If the project workers spent a lot of time on the project
+D
+3. Why is it called the “waterfall model”?
+A - It was created by a waterfall enthusiast
+B - A mistake made in one phase often requires the developer to backup and redo some of the work in the previous phase
+C - A mistake made in a past phase cannot be fixed
+D - A mistake made in a past phase can be fixed in the phase they are in
+B
+4. What does SDLC stand for?
+A - Software Determiner Life Cycle
+B - Software Development List Control
+C - Software Development Life Cycle
+D - Software Determiner List Control
+C
+5. Who developed the Waterfall Model?
+A - Victoria He
+B - Noah Burkhart
+C - Winston Royce
+D - Jack Luhta
+C
+6. How many phases are in the Waterfall Model
+A - 4
+B - 5
+C - 6
+D - 7
+C
+7. Which of the following is not apart Waterfall
+A - Problem Statement
+B - Design
+C - Review
+D - Integration
+C
+8. Which phase will a mistake cost the most in
+A - Analysis
+B - Integration
+C - Maintenance
+D - Design
+C
+9. What percent of cost does integration take?
+A - 69%
+B - 6%
+C - 8%
+D - 68%
+C
+10. What does a Gantt chart do?
+A - Helps project managers to visualize the progress of projects
+B - Helps project managers schedule work
+C - All of the above
+D - Helps project workers solve errors in their code
+C
