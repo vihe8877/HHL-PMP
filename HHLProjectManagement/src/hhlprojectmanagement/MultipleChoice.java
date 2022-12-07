@@ -11,6 +11,8 @@ import java.util.Scanner;
 
 public class MultipleChoice extends javax.swing.JFrame {
 
+    QuizQ[] questions = new QuizQ[10];
+    
     public MultipleChoice() {
         initComponents();
     }
@@ -118,9 +120,20 @@ public class MultipleChoice extends javax.swing.JFrame {
  
     
     public void readFile() {
+        String q, a, b, c, d, ans;
         try {
             File f = new File("src\\hhlprojectmanagement\\mc.txt");
             Scanner s = new Scanner(f);
+            for (int i = 0; i < 10; i++) {
+                q = s.nextLine();
+                a = s.nextLine();
+                b = s.nextLine();
+                c = s.nextLine();
+                d = s.nextLine();
+                ans = s.nextLine();
+                QuizQ question = new QuizQ(q, ans, a, b, c, d, 1);
+                questions[i] = question;
+            }
         } catch (FileNotFoundException e){
             System.out.println("Error: " + e);
         }
