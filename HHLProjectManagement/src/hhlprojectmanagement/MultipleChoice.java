@@ -24,7 +24,7 @@ public class MultipleChoice extends javax.swing.JFrame {
         ansBtnGroup = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputTxt = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        submitBtn = new javax.swing.JButton();
         continueBtn = new javax.swing.JButton();
         questionNumLbl = new javax.swing.JLabel();
         ansBtn1 = new javax.swing.JRadioButton();
@@ -39,9 +39,20 @@ public class MultipleChoice extends javax.swing.JFrame {
         outputTxt.setRows(5);
         jScrollPane1.setViewportView(outputTxt);
 
-        jButton1.setText("Submit");
+        submitBtn.setText("Submit");
+        submitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBtnActionPerformed(evt);
+            }
+        });
 
         continueBtn.setText("Continue>");
+        continueBtn.setEnabled(false);
+        continueBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                continueBtnActionPerformed(evt);
+            }
+        });
 
         questionNumLbl.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         questionNumLbl.setText("Question #1");
@@ -70,7 +81,7 @@ public class MultipleChoice extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(submitBtn)
                     .addComponent(continueBtn)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(ansBtn1)
@@ -107,7 +118,7 @@ public class MultipleChoice extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(ansBtn4)
                         .addGap(39, 39, 39)
-                        .addComponent(jButton1)
+                        .addComponent(submitBtn)
                         .addGap(44, 44, 44)
                         .addComponent(continueBtn)
                         .addGap(34, 34, 34)))
@@ -117,12 +128,41 @@ public class MultipleChoice extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+        readFile();
+        int counter = 0;
+        continueBtn.setEnabled(true);
+        submitBtn.setEnabled(false);
+        ansBtn1.setEnabled(false);
+        ansBtn2.setEnabled(false);;
+        ansBtn3.setEnabled(false);
+        ansBtn4.setEnabled(false);
+        
+        String userAns;
+        if (ansBtn1.isSelected()){
+            userAns = "A";
+        } else if (ansBtn2.isSelected()){
+            userAns = "B";
+        } else if (ansBtn3.isSelected()){
+            userAns = "C";
+        } else {
+            userAns = "D";
+        } 
+        
+        
+    }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void continueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueBtnActionPerformed
+        continueBtn.setEnabled(false);
+        submitBtn.setEnabled(true);
+    }//GEN-LAST:event_continueBtnActionPerformed
+
  
     
     public void readFile() {
-        String q, a, b, c, d, ans;
+        String q, a, b, c, d, ans, feedback;
         try {
-            File f = new File("src\\hhlprojectmanagement\\mc.txt");
+            File f = new File("src/hhlprojectmanagement/mc.txt");
             Scanner s = new Scanner(f);
             for (int i = 0; i < 10; i++) {
                 q = s.nextLine();
@@ -131,7 +171,8 @@ public class MultipleChoice extends javax.swing.JFrame {
                 c = s.nextLine();
                 d = s.nextLine();
                 ans = s.nextLine();
-                QuizQ question = new QuizQ(q, ans, a, b, c, d, 1);
+                feedback = s.nextLine();
+                QuizQ question = new QuizQ(q, ans, feedback, a, b, c, d, 1);
                 questions[i] = question;
             }
         } catch (FileNotFoundException e){
@@ -178,10 +219,10 @@ public class MultipleChoice extends javax.swing.JFrame {
     private javax.swing.JRadioButton ansBtn4;
     private javax.swing.ButtonGroup ansBtnGroup;
     private javax.swing.JButton continueBtn;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea outputTxt;
     private javax.swing.JLabel questionNumLbl;
+    private javax.swing.JButton submitBtn;
     // End of variables declaration//GEN-END:variables
 }

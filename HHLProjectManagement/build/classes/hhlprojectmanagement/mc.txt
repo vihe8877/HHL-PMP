@@ -4,57 +4,67 @@ combination of methods
 a method that solves many problems
 a method that solves one problem
 A
+Sytems are a set of things working together as parts of a mechanism or an interconnecting network. 
 2. Which one of the following does not measure success in the project?
 If it solves the problem
 If it is easy to maintain
 Is it scalable
 If the project workers spent a lot of time on the project
 D
+Project workers spending more time on projects does not guarantee more success
 3. Why is it called the “waterfall model”?
 It was created by a waterfall enthusiast
 A mistake made in one phase often requires the developer to backup and redo some of the work in the previous phase
 A mistake made in a past phase cannot be fixed
 A mistake made in a past phase can be fixed in the phase they are in
 B
+To fix a mistake in a waterfall model, you are required to resolve an issue in a previous step to continue to be able to solve your mistake.
 4. What does SDLC stand for?
-Software Determiner Life Cycle
+Software Development List Cycle
 Software Development List Control
 Software Development Life Cycle
 Software Determiner List Control
 C
+SDLC = Software Development Life Cycle
 5. Who developed the Waterfall Model?
 Victoria He
 Noah Burkhart
 Winston Royce
 Jack Luhta
 C
+Winston Royce developed this model in 1970 based on his experience developing software for spacecraft mission planning
 6. How many phases are in the Waterfall Model
 4
 5
 6
 7
 C
+The waterfall model has a Problem Statement, Analysis, Design, Implementation, Integration /Test, and Maintenance 
 7. Which of the following is not apart Waterfall
 Problem Statement
 Design
 Review
 Integration
 C
+The waterfall model has a Problem Statement, Analysis, Design, Implementation, Integration /Test, and Maintenance 
 8. Which phase will a mistake cost the most in
 Analysis
 Integration
 Maintenance
 Design
 C
+A mistake in the the last stage, maintenance, means that the work done in previous stages have to be changed. This will cost more.
 9. What percent of cost does integration take?
 69%
 6%
 8%
 68%
 C
+Integration, iplementation, design, and analysis all take 8% (total of 32%), while maintenance takes the other 68%
 10. What does a Gantt chart do?
 Helps project managers to visualize the progress of projects
 Helps project managers schedule work
 All of the above
 Helps project workers solve errors in their code
 C
+Gantt charts display the amount, time, and percentage of work finished on the same chart. This means that project managers can both visualize progress and schedule work. Project workers cannot solve errors in thei code using this chart. Both A and B are correct, and they are above C, while D, a wrong answer, is below.
