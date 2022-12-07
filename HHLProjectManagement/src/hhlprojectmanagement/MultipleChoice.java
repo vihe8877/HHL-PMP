@@ -149,6 +149,11 @@ public class MultipleChoice extends javax.swing.JFrame {
             userAns = "D";
         } 
         
+        if (userAns.equals(questions[counter].getAns())) {
+            
+        } else {
+            
+        }
         
     }//GEN-LAST:event_submitBtnActionPerformed
 

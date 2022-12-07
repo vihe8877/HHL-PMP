@@ -29,12 +29,6 @@ public class Notes extends javax.swing.JFrame {
         pageBtn2 = new javax.swing.JButton();
         pageBtn3 = new javax.swing.JButton();
         pageBtn4 = new javax.swing.JButton();
-        pageBtn5 = new javax.swing.JButton();
-        pageBtn6 = new javax.swing.JButton();
-        pageBtn7 = new javax.swing.JButton();
-        pageBtn8 = new javax.swing.JButton();
-        pageBtn9 = new javax.swing.JButton();
-        pageBtn10 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         notesTxt = new javax.swing.JTextArea();
         menuBtn = new javax.swing.JButton();
@@ -54,18 +48,6 @@ public class Notes extends javax.swing.JFrame {
             }
         });
 
-        pageBtn5.setText("5");
-
-        pageBtn6.setText("6");
-
-        pageBtn7.setText("7");
-
-        pageBtn8.setText("8");
-
-        pageBtn9.setText("9");
-
-        pageBtn10.setText("10");
-
         notesTxt.setColumns(20);
         notesTxt.setRows(5);
         jScrollPane1.setViewportView(notesTxt);
@@ -77,35 +59,22 @@ public class Notes extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(menuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
                         .addComponent(pageBtn1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(pageBtn2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(pageBtn3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pageBtn4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pageBtn5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pageBtn6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pageBtn7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pageBtn8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pageBtn9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pageBtn10)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(menuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(pageBtn4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -115,16 +84,10 @@ public class Notes extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pageBtn10)
-                    .addComponent(pageBtn9)
-                    .addComponent(pageBtn8)
                     .addComponent(pageBtn1)
                     .addComponent(pageBtn2)
                     .addComponent(pageBtn3)
-                    .addComponent(pageBtn4)
-                    .addComponent(pageBtn5)
-                    .addComponent(pageBtn6)
-                    .addComponent(pageBtn7))
+                    .addComponent(pageBtn4))
                 .addGap(18, 18, 18)
                 .addComponent(menuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(14, Short.MAX_VALUE))
@@ -177,14 +140,8 @@ public class Notes extends javax.swing.JFrame {
     private javax.swing.JButton menuBtn;
     private javax.swing.JTextArea notesTxt;
     private javax.swing.JButton pageBtn1;
-    private javax.swing.JButton pageBtn10;
     private javax.swing.JButton pageBtn2;
     private javax.swing.JButton pageBtn3;
     private javax.swing.JButton pageBtn4;
-    private javax.swing.JButton pageBtn5;
-    private javax.swing.JButton pageBtn6;
-    private javax.swing.JButton pageBtn7;
-    private javax.swing.JButton pageBtn8;
-    private javax.swing.JButton pageBtn9;
     // End of variables declaration//GEN-END:variables
 }
