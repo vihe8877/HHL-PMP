@@ -5,7 +5,6 @@ a method that solves many problems
 a method that solves one problem
 A
 Sytems are a set of things working together as parts of a mechanism or an interconnecting network. 
-A system 
 2. Which one of the following does not measure success in the project?
 If it solves the problem
 If it is easy to maintain
