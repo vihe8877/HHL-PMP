@@ -1,14 +1,17 @@
 /**
- * 
+ * V. He
+ * Dec 7th, 2022
  */
 package hhlprojectmanagement;
 
-/**
- *
- * @author wihua4239
- */
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Notes extends javax.swing.JFrame {
 
+    String[] chapters = new String[4];
+    
     StudyGUI firstWindow;
     /**
      * Creates new form Notes
@@ -16,6 +19,7 @@ public class Notes extends javax.swing.JFrame {
     public Notes(StudyGUI m) {
         initComponents();
         firstWindow = m;
+        readFile();
     }
 
     /**
@@ -38,10 +42,25 @@ public class Notes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         pageBtn1.setText("1");
+        pageBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pageBtn1ActionPerformed(evt);
+            }
+        });
 
         pageBtn2.setText("2");
+        pageBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pageBtn2ActionPerformed(evt);
+            }
+        });
 
         pageBtn3.setText("3");
+        pageBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pageBtn3ActionPerformed(evt);
+            }
+        });
 
         pageBtn4.setText("4");
         pageBtn4.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +123,8 @@ public class Notes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void pageBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pageBtn4ActionPerformed
-        // TODO add your handling code here:
+        String text = chapters[3];
+        notesTxt.setText(text);
     }//GEN-LAST:event_pageBtn4ActionPerformed
 
     private void menuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBtnActionPerformed
@@ -112,6 +132,33 @@ public class Notes extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_menuBtnActionPerformed
 
+    private void pageBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pageBtn1ActionPerformed
+        notesTxt.setText("" + chapters[0]);
+    }//GEN-LAST:event_pageBtn1ActionPerformed
+
+    private void pageBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pageBtn2ActionPerformed
+        notesTxt.setText("" + chapters[1]);
+    }//GEN-LAST:event_pageBtn2ActionPerformed
+
+    private void pageBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pageBtn3ActionPerformed
+        notesTxt.setText("" + chapters[2]);
+    }//GEN-LAST:event_pageBtn3ActionPerformed
+
+    private void readFile(){
+        String c;
+        try {
+            File f = new File("src/hhlprojectmanagement/notes.txt");
+            Scanner s = new Scanner(f);
+            for (int i = 0; i < 4; i++) {
+                c = s.nextLine();
+                chapters[i] = c;
+            }
+            
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: " + e);
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
