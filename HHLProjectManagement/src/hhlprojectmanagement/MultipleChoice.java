@@ -10,14 +10,21 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class MultipleChoice extends javax.swing.JFrame {
+
     StudyGUI firstWindow;
     QuizQ[] questions = new QuizQ[10];
     int counter = -1;
-    
+
     public MultipleChoice(StudyGUI m) {
         initComponents();
         readFile();
         firstWindow = m;
+        outputTxt.setText(questions[0].getQue() + "\n\nA. "
+                + questions[0].getOpA() + "\nB. "
+                + questions[0].getOpB() + "\nC. "
+                + questions[0].getOpC() + "\nD. "
+                + questions[0].getOpD());
+
     }
 
     @SuppressWarnings("unchecked")
@@ -41,7 +48,9 @@ public class MultipleChoice extends javax.swing.JFrame {
 
         outputTxt.setEditable(false);
         outputTxt.setColumns(20);
+        outputTxt.setLineWrap(true);
         outputTxt.setRows(5);
+        outputTxt.setWrapStyleWord(true);
         jScrollPane1.setViewportView(outputTxt);
 
         submitBtn.setText("Submit");
@@ -149,23 +158,22 @@ public class MultipleChoice extends javax.swing.JFrame {
         counter++;
         continueBtn.setEnabled(true);
         submitBtn.setEnabled(false);
-        
-        
+
         String userAns;
-        if (ansBtn1.isSelected()){
+        if (ansBtn1.isSelected()) {
             userAns = "A";
-        } else if (ansBtn2.isSelected()){
+        } else if (ansBtn2.isSelected()) {
             userAns = "B";
-        } else if (ansBtn3.isSelected()){
+        } else if (ansBtn3.isSelected()) {
             userAns = "C";
         } else {
             userAns = "D";
-        } 
-        
+        }
+
         if (userAns.equals(questions[counter].getAns())) {
-            
+            outputTxt.setText("Correct!");
         } else {
-            
+            outputTxt.setText("Incorrect!\n\n" + questions[counter].getFeedback());
         }
     }                                         
 
@@ -180,8 +188,6 @@ public class MultipleChoice extends javax.swing.JFrame {
         this.setVisible(false);
     }                                       
 
- 
-    
     public void readFile() {
         String q, a, b, c, d, ans, feedback;
         try {
@@ -198,7 +204,7 @@ public class MultipleChoice extends javax.swing.JFrame {
                 QuizQ question = new QuizQ(q, ans, feedback, a, b, c, d, 1);
                 questions[i] = question;
             }
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("Error: " + e);
         }
     }
