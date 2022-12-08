@@ -10,15 +10,18 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class MultipleChoice extends javax.swing.JFrame {
-
+    StudyGUI firstWindow;
     QuizQ[] questions = new QuizQ[10];
+    int counter = -1;
     
-    public MultipleChoice() {
+    public MultipleChoice(StudyGUI m) {
         initComponents();
+        readFile();
+        firstWindow = m;
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         ansBtnGroup = new javax.swing.ButtonGroup();
@@ -32,9 +35,11 @@ public class MultipleChoice extends javax.swing.JFrame {
         ansBtn3 = new javax.swing.JRadioButton();
         ansBtn4 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
+        menuBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        outputTxt.setEditable(false);
         outputTxt.setColumns(20);
         outputTxt.setRows(5);
         jScrollPane1.setViewportView(outputTxt);
@@ -58,6 +63,7 @@ public class MultipleChoice extends javax.swing.JFrame {
         questionNumLbl.setText("Question #1");
 
         ansBtnGroup.add(ansBtn1);
+        ansBtn1.setSelected(true);
         ansBtn1.setText("A");
 
         ansBtnGroup.add(ansBtn2);
@@ -71,6 +77,14 @@ public class MultipleChoice extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel1.setText("Multiple Choice Quiz");
+
+        menuBtn.setText("Menu");
+        menuBtn.setEnabled(false);
+        menuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,7 +101,8 @@ public class MultipleChoice extends javax.swing.JFrame {
                         .addComponent(ansBtn1)
                         .addComponent(ansBtn3)
                         .addComponent(ansBtn4)
-                        .addComponent(ansBtn2, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(ansBtn2, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(menuBtn))
                 .addContainerGap(48, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
@@ -119,24 +134,22 @@ public class MultipleChoice extends javax.swing.JFrame {
                         .addComponent(ansBtn4)
                         .addGap(39, 39, 39)
                         .addComponent(submitBtn)
-                        .addGap(44, 44, 44)
+                        .addGap(18, 18, 18)
                         .addComponent(continueBtn)
-                        .addGap(34, 34, 34)))
+                        .addGap(18, 18, 18)
+                        .addComponent(menuBtn)
+                        .addGap(19, 19, 19)))
                 .addGap(22, 22, 22))
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-        readFile();
-        int counter = 0;
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        counter++;
         continueBtn.setEnabled(true);
         submitBtn.setEnabled(false);
-        ansBtn1.setEnabled(false);
-        ansBtn2.setEnabled(false);;
-        ansBtn3.setEnabled(false);
-        ansBtn4.setEnabled(false);
+        
         
         String userAns;
         if (ansBtn1.isSelected()){
@@ -154,13 +167,18 @@ public class MultipleChoice extends javax.swing.JFrame {
         } else {
             
         }
-        
-    }//GEN-LAST:event_submitBtnActionPerformed
+    }                                         
 
-    private void continueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueBtnActionPerformed
+    private void continueBtnActionPerformed(java.awt.event.ActionEvent evt) {                                            
         continueBtn.setEnabled(false);
         submitBtn.setEnabled(true);
-    }//GEN-LAST:event_continueBtnActionPerformed
+        ansBtn1.setSelected(true);
+    }                                           
+
+    private void menuBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        firstWindow.setVisible(true);
+        this.setVisible(false);
+    }                                       
 
  
     
@@ -184,40 +202,8 @@ public class MultipleChoice extends javax.swing.JFrame {
             System.out.println("Error: " + e);
         }
     }
-    
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MultipleChoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MultipleChoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MultipleChoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MultipleChoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MultipleChoice().setVisible(true);
-            }
-        });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JRadioButton ansBtn1;
     private javax.swing.JRadioButton ansBtn2;
     private javax.swing.JRadioButton ansBtn3;
@@ -226,8 +212,9 @@ public class MultipleChoice extends javax.swing.JFrame {
     private javax.swing.JButton continueBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton menuBtn;
     private javax.swing.JTextArea outputTxt;
     private javax.swing.JLabel questionNumLbl;
     private javax.swing.JButton submitBtn;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
