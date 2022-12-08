@@ -37,4 +37,9 @@ public class User {
     public String toString() {
         return "User{" + "name=" + name + ", score=" + score + '}';
     }
+    
+    public User clone() {
+        User clonedUser = new User(name, score);
+        return clonedUser;
+    }
 }
