@@ -31,12 +31,16 @@ public class StudyGUI extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         notesBtn = new javax.swing.JButton();
-        testBtn = new javax.swing.JButton();
+        quizBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(300, 150));
+        setPreferredSize(new java.awt.Dimension(600, 300));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Wide Latin", 0, 36)); // NOI18N
-        jLabel1.setText("Study Bot");
+        jLabel1.setFont(new java.awt.Font("Imprint MT Shadow", 1, 24)); // NOI18N
+        jLabel1.setText("The Software Devolopment Life Cycle Study Bot");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         notesBtn.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         notesBtn.setText("Notes");
@@ -45,41 +49,17 @@ public class StudyGUI extends javax.swing.JFrame {
                 notesBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(notesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 250, 120));
 
-        testBtn.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        testBtn.setText("Test");
-        testBtn.addActionListener(new java.awt.event.ActionListener() {
+        quizBtn.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        quizBtn.setText("Quiz");
+        quizBtn.setActionCommand("Quiz");
+        quizBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testBtnActionPerformed(evt);
+                quizBtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(121, Short.MAX_VALUE)
-                .addComponent(notesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
-                .addComponent(testBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(156, 156, 156))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jLabel1)
-                .addGap(84, 84, 84)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(notesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(testBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(169, Short.MAX_VALUE))
-        );
+        getContentPane().add(quizBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 250, 120));
 
         pack();
     }// </editor-fold>                        
@@ -92,7 +72,7 @@ public class StudyGUI extends javax.swing.JFrame {
         this.setVisible(false);
     }                                        
 
-    private void testBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    private void quizBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
         if (anotherWindow == null) {
             anotherWindow = new MultipleChoice(this);
         }
@@ -138,6 +118,6 @@ public class StudyGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton notesBtn;
-    private javax.swing.JButton testBtn;
+    private javax.swing.JButton quizBtn;
     // End of variables declaration                   
 }
